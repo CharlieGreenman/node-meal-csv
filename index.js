@@ -1,25 +1,30 @@
-var readline = require('readline');
+var prompt = require('prompt');
 
-var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+var properties = [
+    {
+        name: "breakfast",
+        description: "What would you like for breakfast"
+    },
+    {
+        name: "lunch",
+        description: "What would you like for lunch"
+    },
+    {
+        name: "dinner",
+        description: "What would you like for Dinner"
+    }
+];
+
+prompt.start();
+
+prompt.get(properties, function (err, result) {
+    if (err) { return onErr(err); }
+    console.log('  Breakfast: ' + result.breakfast);
+    console.log('  Lunch: ' + result.lunch);
+    console.log('  Dinner: ' + result.dinner);
 });
 
-rl.setPrompt('YUM> ');
-rl.prompt();
-
-rl.question('what do you want to eat for breakfast? ', function(breakfast) {
-    console.log('Oh, so your favorite food is ' + breakfast);
-    rl.pause()
-});
-
-rl.question('what do you want to eat for lunch? ', function(lunch) {
-    rl.resume()
-    console.log('Oh, so your favorite food is ' + lunch);
-    rl.close();
-});
-
-rl.question('what do you want to eat for dinner? ', function(dinner) {
-    console.log('Oh, so your favorite food is ' + dinner);
-    rl.close();
-});
+function onErr(err) {
+    console.log(err);
+    return 1;
+}
