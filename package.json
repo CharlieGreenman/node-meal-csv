@@ -1,0 +1,31 @@
+{
+  "name": "node-meal-csv",
+  "version": "1.0.0",
+  "description": "prompt to csv node example",
+  "main": "index.js",
+  "dependencies": {
+    "csv-stringify": "^0.0.8",
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {
+    "csv-stringify": "0.0.8",
+    "prompt": "^0.2.14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CharlieGreenman/node-meal-csv.git"
+  },
+  "keywords": [
+    "csv",
+    "node"
+  ],
+  "author": "Charlie Greenman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CharlieGreenman/node-meal-csv/issues"
+  },
+  "homepage": "https://github.com/CharlieGreenman/node-meal-csv"
+}
