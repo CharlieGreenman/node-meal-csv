@@ -1,7 +1,5 @@
 var prompt = require('prompt');
-var stringify = require('csv-stringify');
 var fs = require('fs');
-
 
 var properties = [
     {
@@ -22,14 +20,17 @@ prompt.start();
 
 prompt.get(properties, function (err, result) {
     if (err) { return onErr(err); }
-    input = [result.breakfast, result.lunch, result.dinner];
+    input = 
+    [`Breakfast, ${result.breakfast}
+Lunch, ${result.lunch} 
+Dinner, ${result.dinner}`];
 
     console.log('  Breakfast: ' + result.breakfast);
     console.log('  Lunch: ' + result.lunch);
     console.log('  Dinner: ' + result.dinner);
-    stringify(input, function(err, output){
-      fs.writeFile('food.csv', output)
-    });
+    fs.writeFile('food.csv', input);
+    console.log('meal.csv file has been created, rejoice in your glory');        
+    
 });
 
 function onErr(err) {

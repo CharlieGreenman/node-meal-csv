@@ -4,11 +4,9 @@
   "description": "prompt to csv node example",
   "main": "index.js",
   "dependencies": {
-    "csv-stringify": "^0.0.8",
     "prompt": "^0.2.14"
   },
   "devDependencies": {
-    "csv-stringify": "0.0.8",
     "prompt": "^0.2.14"
   },
   "scripts": {
