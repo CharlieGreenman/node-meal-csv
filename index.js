@@ -21,13 +21,13 @@ prompt.start();
 prompt.get(properties, function (err, result) {
     if (err) { return onErr(err); }
     input = 
-    [`Breakfast, ${result.breakfast}
-Lunch, ${result.lunch} 
-Dinner, ${result.dinner}`];
+    [`Breakfast, ${result.breakfast.trim()}
+Lunch, ${result.lunch.trim()} 
+Dinner, ${result.dinner.trim()}`];
 
-    console.log('  Breakfast: ' + result.breakfast);
-    console.log('  Lunch: ' + result.lunch);
-    console.log('  Dinner: ' + result.dinner);
+    console.log('  Breakfast: ' + result.breakfast.trim());
+    console.log('  Lunch: ' + result.lunch.trim());
+    console.log('  Dinner: ' + result.dinner.trim());
     fs.writeFile('food.csv', input);
     console.log('meal.csv file has been created, rejoice in your glory');        
     
